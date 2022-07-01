@@ -764,6 +764,55 @@ add_action( 'init', 'blog_post_type', 0 );
 
 
 
+/*
+* Creating a function to create our formtitle
+*/
+
+function formtitle_post_type() {
+	$labels = array(
+		'name'                => _x( 'formtitle', 'Post Type General Name', 'Cobold-WordpressAssessment' ),
+		'singular_name'       => _x( 'formtitle', 'Post Type Singular Name', 'Cobold-WordpressAssessment' ),
+		'menu_name'           => __( 'formtitle', 'Cobold-WordpressAssessment' ),
+		'parent_item_colon'   => __( 'Parent formtitle', 'Cobold-WordpressAssessment' ),
+		'all_items'           => __( 'All formtitle', 'Cobold-WordpressAssessment' ),
+		'view_item'           => __( 'View formtitle', 'Cobold-WordpressAssessment' ),
+		'add_new_item'        => __( 'Add New formtitle', 'Cobold-WordpressAssessment' ),
+		'add_new'             => __( 'Add New', 'Cobold-WordpressAssessment' ),
+		'edit_item'           => __( 'Edit formtitle', 'Cobold-WordpressAssessment' ),
+		'update_item'         => __( 'Update formtitle', 'Cobold-WordpressAssessment' ),
+		'search_items'        => __( 'Search formtitle', 'Cobold-WordpressAssessment' ),
+		'not_found'           => __( 'Not Found', 'Cobold-WordpressAssessment' ),
+		'not_found_in_trash'  => __( 'Not found in Trash', 'Cobold-WordpressAssessment' ),
+	);
+	$args = array(
+		'label'               => __( 'formtitle', 'Cobold-WordpressAssessment' ),
+		'description'         => __( 'formtitle news and formtitles', 'Cobold-WordpressAssessment' ),
+		'labels'              => $labels,
+		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'currency' ),
+		'taxonomies'          => array( 'genres' ),	
+		'hierarchical'        => false,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => true,
+
+		'menu_position'       => 5,
+		'can_export'          => true,
+		'has_archive'         => true,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'capability_type'     => 'page',
+		'taxonomies'          => array( 'category' ),
+	);
+	register_post_type( 'formtitle', $args );
+}
+add_action( 'init', 'formtitle_post_type', 0 );
+
+
+
+
+
 // Register Custom Navigation Walker
 require_once('wp-bootstrap-navwalker.php');
 /**

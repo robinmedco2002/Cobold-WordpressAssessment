@@ -1579,3 +1579,26 @@ preloader
     opacity: 0;
   }
 }
+
+
+/* .contact-form [type=submit] {
+  background-color:#8261ee!important;
+  color: #fff;
+  
+  }
+
+  .contact-form:hover [type=submit] {
+    background-color:#ff589e!important;
+    color: #fff;
+    
+    } */
+
+
+    input.wpcf7-form-control.wpcf7-submit:hover {
+      background-color: #ff589e;
+      color: #fff;
+      }
+      input.wpcf7-form-control.wpcf7-submit {
+      background-color: #8261ee;
+      color: #fff;
+      }

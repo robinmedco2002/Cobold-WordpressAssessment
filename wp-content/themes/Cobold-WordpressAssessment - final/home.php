@@ -368,27 +368,34 @@ get_header(); ?>
         <div class="container">
             <!-- ***** Section Title Start ***** -->
             <div class="row">
+                
+
+   <?php $posts = new WP_Query(array('post_type' => 'formtitle' , 'order' => 'ASC'));
+             while($posts-> have_posts()) : $posts->the_post();?>
+
                 <div class="col-lg-12">
                     <div class="center-heading">
-                        <h2 class="section-title">Talk To Us</h2>
+                        <h2 class="section-title"> <?php echo get_the_title();?> </h2>
                     </div>
                 </div>
                 <div class="offset-lg-3 col-lg-6">
                     <div class="center-text">
-                        <p>Maecenas pellentesque ante faucibus lectus vulputate sollicitudin. Cras feugiat hendrerit semper.</p>
+                        <p> <?php echo get_the_content();?> </p>
                     </div>
                 </div>
+                <?php endwhile; ?>
             </div>
             <!-- ***** Section Title End ***** -->
 
             <div class="row">
                 <!-- ***** Contact Text Start ***** -->
                 <div class="col-lg-4 col-md-6 col-sm-12">
-                    <h5 class="margin-bottom-30">Keep in touch</h5>
+                    <h5 class="margin-bottom-30"><?php echo the_field('formsubtitle');?></h5>
                     <div class="contact-text">
-                        <p>110-220 Quisque diam odio, maximus ac consectetur eu, 10260
-                        <br>auctor non lorem</p>
-                        <p>You are NOT allowed to re-distribute Softy Pinko template on any template collection websites. Thank you.</p>
+
+                        <p><?php echo the_field('formmessage1');?>
+                        <br><?php echo the_field('formmessage2');?> </p>
+                        <p><?php echo the_field('formmessage3');?>  </p>
                     </div>
                 </div>
                 <!-- ***** Contact Text End ***** -->
@@ -399,8 +406,8 @@ get_header(); ?>
                         <form id="contact" action="" method="get">
                           <div class="row">
 
-<!--                           
-                            <div class="col-lg-6 col-md-12 col-sm-12">
+                          
+                            <!-- <div class="col-lg-6 col-md-12 col-sm-12">
                               <fieldset>
                                 <input name="name" type="text" class="form-control" id="name" placeholder="Full Name" required="">
                               </fieldset>
@@ -420,9 +427,9 @@ get_header(); ?>
                                 <button type="submit" id="form-submit" class="main-button">Send Message</button>
                               </fieldset>
                             </div> -->
-
+                    
                             <?php echo do_shortcode( '[contact-form-7 id="84" title="Contact form 1"]'); ?>
-                          
+                                                    
                           </div>
                         </form>
                     </div>
