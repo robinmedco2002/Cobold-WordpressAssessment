@@ -427,8 +427,7 @@ get_header(); ?>
                                 <button type="submit" id="form-submit" class="main-button">Send Message</button>
                               </fieldset>
                             </div> -->
-                            <?php echo do_shortcode( '   [contact-form-7 id="110" title="Form2"]'); ?>
-                            <h1> TEst </h1>
+                    
                             <?php echo do_shortcode( '[contact-form-7 id="84" title="Contact form 1"]'); ?>
                           
                           </div>
