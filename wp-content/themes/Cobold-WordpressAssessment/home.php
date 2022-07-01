@@ -429,7 +429,7 @@ get_header(); ?>
                             </div> -->
                     
                             <?php echo do_shortcode( '[contact-form-7 id="84" title="Contact form 1"]'); ?>
-                          
+                                                    
                           </div>
                         </form>
                     </div>
